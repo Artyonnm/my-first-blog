@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-{% extends 'base.html' %}
 {% load static %}
 <html>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+
 <head>
     <title>Inicio</title>
 </head>
 <body>
-    <h1>Bienvenido al sitio web!</h1>
+    <h1>Bienvenido al sitio web</h1>
+    <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>ID</th>
+            <th></th>  <!-- Espacio para el botón en el lateral derecho -->
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.id }}</td>
+            <td><a href="#">Botón</a></td>  <!-- Botón en el lateral derecho -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table> 
 </body>
 </html>
