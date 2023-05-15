@@ -16,3 +16,23 @@ button{
 body{
     background-image: url(" % static 'img/fondo.jpg' % ");
 }
+
+.fondoLogin {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.formulario{
+    background-color: rgba(45, 115, 153, 0.8);
+    width: 300px;
+    height: 200px;
+    border-radius: 10%;
+    box-shadow: 0 0 10px #000;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+}
