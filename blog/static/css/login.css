@@ -12,3 +12,7 @@ button{
     border-radius: 10%;
     background-color: steelblue;
 }
+
+body{
+    background-image: url(" % static 'img/fondo.jpg' % ");
+}
