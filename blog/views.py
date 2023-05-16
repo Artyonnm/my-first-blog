@@ -33,6 +33,9 @@ def logout_view(request):
 def home_view(request):
     return render(request, 'base.html')
 
+def inventarioVista(request):
+    return render(request, 'home.html')
+
 def registration_view(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
