@@ -30,12 +30,12 @@ def logout_view(request):
     return redirect('base')
 
 @login_required
-def home_view(request):
+def producto_view(request):
     return render(request, 'base.html')
 
 @login_required
 def inventarioVista(request):
-    return render(request, 'home.html')
+    return render(request, 'producto.html')
 
 def registration_view(request):
     if request.method == 'POST':
@@ -47,3 +47,27 @@ def registration_view(request):
         form = RegistrationForm()
 
     return render(request, 'registro.html', {'form': form})
+
+def factura_view(request):
+    return render(request, 'factura.html')
+
+def clientes_view(request):
+    return render(request, 'clientes.html')
+
+def proveedor_view(request):
+    return render(request, 'proveedor.html')
+
+def usuarios_view(request):
+    return render(request, 'usuarios.html')
+
+def opciones_view(request):
+    return render(request, 'opciones.html')
+
+def pedido_view(request):
+    return render(request, 'pedido.html')
+
+def producto_ingresado_view(request):
+    return render(request, 'producto_ingresado.html')
+
+def proveedor_ingresado_view(request):
+    return render(request, 'proveedor_ingresado.html')

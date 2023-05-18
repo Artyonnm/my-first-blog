@@ -13,7 +13,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'css/adminlte.min.css' %}">
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" integrity="SHA384-..." crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="based.css">
+  <link rel="stylesheet" href="base.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -39,7 +39,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="base.html" class="brand-link">
       <span class="brand-text font-weight-light">Bienvenido, {{user.username}}</span>
     </a>
     <!-- Sidebar -->
@@ -50,7 +50,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="base.html" class="nav-link">
               <i class="nav-icon fas fa-tacproductoter-alt"></i>
               <p>
                 Inicio
@@ -124,66 +124,31 @@
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
       <!-- Content Header (Page header) -->
-      <section class="content-header">
-        <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Estadisticas</h1>
-          </div>
-          <div class="col-sm-6">
-             
-          </div>
+      <article class="content responsive-tables-page">
+        <div class="title-block">
+          <h1 class="title"> Opciones </h1>
+          <p class="title-description">Ajustes de la página</p>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <div class="card">
-      <div class="card-body">
-        <p class="card-text">Aquí se muestra el resumen de las estadísticas.</p>
-        <ul class="list-group">
-          <li class="list-group-item">Productos registrados: 532</li>
-          <li class="list-group-item">Proveedores registrados: 32</li>
-          <li class="list-group-item">Ingreso total: $123.456</li>
-          <li class="list-group-item">Facturas emitidas: 0</li>
-        </ul>
-      </div>
-    </div>
-    <br>
-    <div class="container col-md-6">
-      <div id="grafico" class="card chart">
-        <canvas id="myChart"></canvas>
-        <script>
-          // Datos para el gráfico
-          var data = {
-            labels: ['Productos en merma', 'Productos ingresados', 'Productos vendidos'],
-            datasets: [{
-              data: [30, 50, 20],
-              backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-              hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
-            }]
-          };
-      
-          // Opciones de configuración del gráfico
-          var options = {
-            responsive: true,
-            maintainAspectRatio: false
-          };
-      
-          // Obtener el contexto del lienzo
-          var ctx = document.getElementById('myChart').getContext('2d');
-      
-          // Crear el gráfico circular
-          var myChart = new Chart(ctx, {
-            type: 'doughnut',
-            data: data,
-            options: options
-          });
-          Chart.defaults.font.family = 'monospace';
-        </script>
-      </div>
-    </div>
-    
+        <div class="card">
+            <form class="m-4">
+                <label >Título de la página:</label>
+                <br>
+                <input type="text" id="titulo" name="titulo"><br>
+                <label >Moneda a emplear:</label>
+                <br>
+                <input type="text" id="titulo" name="titulo"><br>
+                <label>Nombre de la página:</label>
+                <br>
+                <textarea id="descripcion" name="descripcion"></textarea><br>
+            
+                <label>Subir base de datos</label><br>
+                <input class="m-2 pr-4" type="file" id="myFile" name="filename"><br>
+                
+                <button class="btn btn-primary">Guardar</button>
+                <button class="btn btn-secondary">Cancelar</button>
+              </form>
+        </div>
+      </article>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
