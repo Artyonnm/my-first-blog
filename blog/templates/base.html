@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css" integrity="SHA384-..." crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="based.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!-- Site wrapper -->
@@ -31,6 +35,16 @@
       <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
         <!-- Navbar Search -->
+        <div class="dropdown">
+          <button class="dropdown-toggle btn btn-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa-solid fa-user"></i>
+             {{user.username}}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Cerrar sesión</a>
+          </div>
+        </div>
         
       </ul>
     </nav>
@@ -73,22 +87,7 @@
               </p>
             </a>
           </li>
-          <li class="nav-item">
-            <a href="pedido.html" class="nav-link">
-              <i class="fa-solid fa-book"></i>
-              <p>
-                Pedido
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="clientes.html" class="nav-link">
-              <i class="fa-solid fa-book"></i>
-              <p>
-                Clientes
-              </p>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a href="factura.html" class="nav-link">
               <i class="fa-solid fa-book"></i>
