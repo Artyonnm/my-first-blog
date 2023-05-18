@@ -21,6 +21,7 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
@@ -38,6 +39,8 @@ urlpatterns = [
     path('opciones.html', views.opciones_view, name='opciones'), 
     path('producto_ingresado.html', views.producto_ingresado_view, name='producto_ingresado'), 
     path('proveedor_ingresado.html', views.proveedor_ingresado_view, name='proveedor_ingresado'),
+
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
 ]
 
