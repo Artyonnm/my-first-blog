@@ -28,7 +28,7 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),
     path('base', home_view, name='base'),
     path('registro/', views.registration_view, name='registro'),
-    path('home.html', views.inventarioVista, name='home')
+    path('home.html', views.inventarioVista, name='home'),
 ]
 
 if settings.DEBUG:

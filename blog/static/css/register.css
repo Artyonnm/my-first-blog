@@ -1,0 +1,79 @@
+.formContainer{
+    color: antiquewhite;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.formRegistro{
+    font-family: sans-serif;
+    background-color: steelblue;
+    width: 500px;
+    height: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registro {
+    font-size: 30px;
+    color: whitesmoke;
+    margin-bottom: 20px;   
+    padding-left: 37%;
+}
+
+.formRegistro input{
+    width: 230px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+
+.flexSeparacion{
+    display: flex;
+    justify-content: space-between;
+}
+
+.botonContainer{
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: -30px;
+    margin-right: 10px;
+}
+
+.botonContainer button {
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.helptext{
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+ul{
+    color: white;
+    font-size: 10px;
+    list-style: disc;
+    margin-left: 10px;
+
+}
+
+/*imagen*/
+.fondoLogin {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}

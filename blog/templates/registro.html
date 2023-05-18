@@ -2,27 +2,53 @@
 
 <!DOCTYPE>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Inicio de sesión</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/login.css' %}">
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="formRegistro">
-          {% block content %}
-              <h2>Registro</h2>
-              <form method="post">
-                  {% csrf_token %}
-                  {{ form.as_p }}
-                  
-                  <button type="submit">Registrarse</button>
-              </form>
-          {% endblock %}
-          <img class="fondoLogin" src="{% static 'img/fondo.jpg' %}" alt="fondito">
+
+<head>
+  <meta charset="utf-8">
+  <title>Inicio de sesión</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+  <div class="formContainer">
+    <div class="formRegistro">
+      {% block content %}
+      <div class="registro">
+        <h2>Registro</h2>
       </div>
+      <form method="post">
+        {% csrf_token %}
+        
+        <div class="flexSeparacion">
+          <label for="id_username">Nombre de usuario:</label>
+          <input type="text" name="username" maxlength="150" autofocus required id="id_username">
+        </div>
+        <div class="flexSeparacion">
+          <label for="id_email">Email:</label>
+          <input type="email" name="email" required id="id_email">
+        </div>
+        <div class="flexSeparacion">
+          <label for="id_password1">Contraseña:</label>
+          <input type="password" name="password1" autocomplete="new-password" required id="id_password1">
+        </div>
+        <div class="flexSeparacion">
+          <label for="id_password2">Contraseña (confirmación):</label>
+          <input type="password" name="password2" autocomplete="new-password" required id="id_password2">
+        </div>
+        <div class="botonContainer">
+          <button type="submit" class="btn btn-primary">Registrarse</button>
+          <button type="submit" class="btn btn-primary" onclick="window.location.href = '{% url 'login' %}';">Acceder a tu cuenta</button>
+        </div>
+      </form>
+      <script>
+        console.log('{{ form.as_p|escapejs }}');
+      </script>
+      {% endblock %}
+      <img class="fondoLogin" src="{% static 'img/fondo.jpg' %}" alt="fondito">
     </div>
-    </body>
+  </div>
+</body>
+
 </html>

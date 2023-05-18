@@ -33,6 +33,7 @@ def logout_view(request):
 def home_view(request):
     return render(request, 'base.html')
 
+@login_required
 def inventarioVista(request):
     return render(request, 'home.html')
 
