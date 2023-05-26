@@ -18,3 +18,21 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class ProductoIngresado(models.Model):
+    nombre_producto = models.CharField(max_length=150)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
+    cantidad = models.IntegerField()
+    categoria = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.nombre_producto
+    
+class Proveedor(models.Model):
+    nombre = models.CharField(max_length=100)
+    cedula = models.CharField(max_length=10)
+    telefono = models.CharField(max_length=20)
+    correo = models.EmailField()
+
+    def __str__(self):
+        return self.nombre

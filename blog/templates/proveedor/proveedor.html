@@ -1,0 +1,12 @@
+{% for proveedor in Proveedor %}
+  <tr>
+    <td>{{ proveedor.nombre }}</td>
+    <td>{{ proveedor.cedula }}</td>
+    <td>{{ proveedor.telefono }}</td>
+    <td>{{ proveedor.correo }}</td>
+    <td>
+      <a href="{% url 'proveedor_update' pk=proveedor.pk %}">Editar</a>
+      <a href="{% url 'proveedor_delete' pk=proveedor.pk %}">Eliminar</a>
+    </td>
+  </tr>
+{% endfor %}

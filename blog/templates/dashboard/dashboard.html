@@ -1,0 +1,70 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Estadisticas</h1>
+        </div>
+        <div class="col-sm-6">
+           
+        </div>
+      </div>
+    </div><!-- /.container-fluid -->
+  </section>
+
+  <!-- Main content -->
+  <div class="card">
+    <div class="card-body">
+      <p class="card-text">Aquí se muestra el resumen de las estadísticas.</p>
+      <ul class="list-group">
+        <li class="list-group-item">Productos registrados: 5232</li>
+        <li class="list-group-item">Proveedores registrados: 32</li>
+        <li class="list-group-item">Ingreso total: $123.456</li>
+        <li class="list-group-item">Facturas emitidas: 0</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="container col-md-6">
+    <div id="grafico" class="card chart">
+      <canvas id="myChart"></canvas>
+      <script>
+        // Datos para el gráfico
+        var data = {
+          labels: ['Productos en merma', 'Productos ingresados', 'Productos vendidos'],
+          datasets: [{
+            data: [30, 50, 20],
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+            hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56']
+          }]
+        };
+    
+        // Opciones de configuración del gráfico
+        var options = {
+          responsive: true,
+          maintainAspectRatio: false
+        };
+    
+        // Obtener el contexto del lienzo
+        var ctx = document.getElementById('myChart').getContext('2d');
+    
+        // Crear el gráfico circular
+        var myChart = new Chart(ctx, {
+          type: 'doughnut',
+          data: data,
+          options: options
+        });
+        Chart.defaults.font.family = 'monospace';
+      </script>
+    </div>
+  </div>
+  
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+{% endblock %}

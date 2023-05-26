@@ -14,10 +14,17 @@ a {
 }
 
 button{
-    margin-left: 10px;
+    margin-left: 72px;
     margin-top: 10px;
     border-radius: 10%;
     background-color: rgb(29, 75, 112);
+}
+
+.forgot button{
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 10%;
+    background-color: rgb(40, 98, 146);
 }
 
 body{
@@ -59,7 +66,7 @@ body{
 .titulo {
     grid-area: titulo;
     font-size: 30px;
-    color: rgb(214, 38, 38);
+    color: whitesmoke;
     margin: 5%;
 }
 
@@ -103,10 +110,10 @@ body{
     grid-area: logIn;
     width: 80px;
     height: auto;
-    padding-left: 0px;
+    padding-left: 20px;
     font-weight: bold;
     text-align: center;
-    align-items: start;
+    align-items: center;
 }
 
 

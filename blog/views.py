@@ -1,17 +1,16 @@
 from django.shortcuts import render
-from .models import Post
-from django.utils import timezone
 from django.contrib.auth import authenticate, login, logout
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .forms import RegistrationForm
+from django.views.generic.edit import CreateView
+from .models import ProductoIngresado
+from .forms import ProductForm
+from django.contrib.auth import login
+from .forms import ProductForm
 
 # Create your views here.
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts':posts})
-
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -31,7 +30,7 @@ def logout_view(request):
 
 @login_required
 def producto_view(request):
-    return render(request, 'base.html')
+    return render(request, 'base/base.html')
 
 @login_required
 def inventarioVista(request):
@@ -51,23 +50,45 @@ def registration_view(request):
 def factura_view(request):
     return render(request, 'factura.html')
 
-def clientes_view(request):
-    return render(request, 'clientes.html')
-
 def proveedor_view(request):
     return render(request, 'proveedor.html')
 
 def usuarios_view(request):
     return render(request, 'usuarios.html')
 
-def opciones_view(request):
-    return render(request, 'opciones.html')
 
-def pedido_view(request):
-    return render(request, 'pedido.html')
-
-def producto_ingresado_view(request):
+## def producto_ingresado_view(request):
+    class CrearProductoView(CreateView):
+        model = ProductoIngresado
+    form_class = ProductForm
+    template_name = 'producto.html'
+    success_url = '/productos/'
     return render(request, 'producto_ingresado.html')
-
+##
+ 
 def proveedor_ingresado_view(request):
     return render(request, 'proveedor_ingresado.html')
+
+def dashboard_view(request):
+    return render(request, 'dashboard.html')
+
+def agregar_producto(request):
+    if request.method == 'GET':
+        form = ProductForm()
+        return render(request, 'agregar_producto.html', {
+        'form': ProductForm
+    })
+    else:
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            nuevo_producto = form.save(commit=False)
+            nuevo_producto.user = request.user
+            nuevo_producto.save()
+            print(nuevo_producto)
+            return redirect('producto.html')
+        else:
+            return render(request, 'agregar_producto.html', {'form': form})
+@login_required
+def producto(request):
+    productos = ProductoIngresado.objects.filter(user=request.user, datecompleted__isnull=True)
+    return render(request, 'producto.html', {'productos': productos})

@@ -23,25 +23,24 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
+    path('', views.login_view, name='login'),
+    path('base.html', views.producto_view, name='base'),
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')),
-    path('login/', views.login_view, name='login'),
+    path('crear_producto', views.agregar_producto, name='crear_producto'),
     path('logout/', views.logout_view, name='logout'),
-    path('base.html', producto_view, name='base'),
     path('registro/', views.registration_view, name='registro'),
-    path('producto.html', views.inventarioVista, name='producto'),
-   
-    path('pedido.html', views.pedido_view, name='pedido'),
+    path('producto.html', views.producto, name='producto'),
+    path('agregar_producto.html', views.agregar_producto, name='agregar_producto'),
+
     path('factura.html', views.factura_view, name='factura'),
-    path('clientes.html', views.clientes_view, name='clientes'),
     path('proveedor.html', views.proveedor_view, name='proveedor'),
     path('usuarios.html', views.usuarios_view, name='usuarios'),
-    path('opciones.html', views.opciones_view, name='opciones'), 
-    path('producto_ingresado.html', views.producto_ingresado_view, name='producto_ingresado'), 
     path('proveedor_ingresado.html', views.proveedor_ingresado_view, name='proveedor_ingresado'),
 
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
 
+    path('dashboard.html', views.dashboard_view, name='dashboard'),
+    
 ]
 
 if settings.DEBUG:
