@@ -87,8 +87,9 @@ def agregar_producto(request):
             print(nuevo_producto)
             return redirect('producto.html')
         else:
-            return render(request, 'agregar_producto.html', {'form': form})
+            return render(request, 'agregar_producto.html', {'form': ProductForm})
+
 @login_required
 def producto(request):
-    productos = ProductoIngresado.objects.filter(user=request.user, datecompleted__isnull=True)
+    productos = ProductoIngresado.objects.filter()
     return render(request, 'producto.html', {'productos': productos})
