@@ -1,16 +1,28 @@
-{% extends 'base/base.html'%}
+{% extends 'base/base.html' %}
 
 {% block content %}
-  <h1>Hola mundo</h1>
+  <h1 class="hola">Hola mundo</h1>
 
-  <ul>
-  {% for producto in productos %}
-    <li>
-      <h1> {{producto.nombre}} </h1>
-      <h1> {{producto.precio}} </h1>
-      <h1> {{producto.categoria}} </h1>
-      <h1> {{producto.cantidad}} </h1>
-    </li>
-  {%endfor%}
-  </ul>
-{%endblock%}
+  <div class="tablaproductos">
+    <table class="m-4 centered-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Categoría</th>
+          <th>Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for producto in productos %}
+        <tr>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.precio }}</td>
+          <td>{{ producto.categoria }}</td>
+          <td>{{ producto.cantidad }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

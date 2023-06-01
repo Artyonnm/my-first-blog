@@ -7,10 +7,6 @@
     font-family: Arial, sans-serif;
   }
   
-  .chart {
-    /* Estilos específicos para el gráfico */
-  }
-  
   .chart .titulo {
     font-size: 18px;
     font-weight: bold;
@@ -32,14 +28,16 @@
     color: #0000ff;
   }
 
-  tablaproductos{
+  .tablaproductos {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
   }
   
-  hola{
+  .hola {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 20%;
+    color: #0000ff;
   }
+  

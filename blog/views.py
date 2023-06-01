@@ -56,16 +56,10 @@ def proveedor_view(request):
 def usuarios_view(request):
     return render(request, 'usuarios.html')
 
+def producto_ingresado(request):
+    productos = ProductoIngresado.objects.all()
+    return render(request, 'producto.html', {'productos': productos})
 
-## def producto_ingresado_view(request):
-    class CrearProductoView(CreateView):
-        model = ProductoIngresado
-    form_class = ProductForm
-    template_name = 'producto.html'
-    success_url = '/productos/'
-    return render(request, 'producto_ingresado.html')
-##
- 
 def proveedor_ingresado_view(request):
     return render(request, 'proveedor_ingresado.html')
 
