@@ -31,6 +31,7 @@ urlpatterns = [
     path('registro/', views.registration_view, name='registro'),
     path('producto.html', views.producto, name='producto'),
     path('agregar_producto.html', views.agregar_producto, name='agregar_producto'),
+    path('editar_producto.html', views.editar_producto, name='editar_producto'),
 
     path('factura.html', views.factura_view, name='factura'),
     path('proveedor.html', views.proveedor_view, name='proveedor'),

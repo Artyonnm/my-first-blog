@@ -87,3 +87,7 @@ def agregar_producto(request):
 def producto(request):
     productos = ProductoIngresado.objects.filter()
     return render(request, 'producto.html', {'productos': productos})
+
+def editar_producto(request, id):
+    productos = get_object_or_404(productos, id=id)
+    return render(request, 'editar_producto.html', {'form': form})
