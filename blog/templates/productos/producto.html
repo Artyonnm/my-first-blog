@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
 
+
 {% block content %}
   <h1 class="hola">Hola mundo</h1>
 
@@ -16,7 +17,7 @@
         <tbody>
         {% for producto in productos %}
           <tr>
-            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.nombre_producto }}</td>
             <td>{{ producto.precio }}</td>
             <td>{{ producto.categoria }}</td>
             <td>{{ producto.cantidad }}</td>

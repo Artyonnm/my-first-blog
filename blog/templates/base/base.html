@@ -32,8 +32,10 @@
   {% include 'base/sidebar.html' %}
   {% endblock sidebar %}
 
-  {% block content %}
-  {% endblock %}  
+  <div class="content-wrapper container">    
+      {% block content %}
+      {% endblock %}  
+  </div>
 
   {% block footer %}
   {% include 'base/footer.html' %}

@@ -58,13 +58,13 @@ def usuarios_view(request):
 
 def producto_ingresado(request):
     productos = ProductoIngresado.objects.all()
-    return render(request, 'producto.html', {'productos': productos})
+    return render(request, 'productos/producto.html', {'productos': productos})
 
 def proveedor_ingresado_view(request):
     return render(request, 'proveedor_ingresado.html')
 
 def dashboard_view(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'dashboard/dashboard.html')
 
 def agregar_producto(request):
     if request.method == 'GET':
@@ -79,15 +79,15 @@ def agregar_producto(request):
             nuevo_producto.user = request.user
             nuevo_producto.save()
             print(nuevo_producto)
-            return redirect('producto.html')
+            return redirect('productos/producto.html')
         else:
             return render(request, 'agregar_producto.html', {'form': ProductForm})
 
 @login_required
 def producto(request):
     productos = ProductoIngresado.objects.filter()
-    return render(request, 'producto.html', {'productos': productos})
+    return render(request, 'productos/producto.html', {'productos': productos})
 
 def editar_producto(request, id):
     productos = get_object_or_404(productos, id=id)
-    return render(request, 'editar_producto.html', {'form': form})
+    return render(request, 'productos/editar_producto.html', {'form': form})
