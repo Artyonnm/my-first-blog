@@ -2,9 +2,9 @@
 <django-objects version="1.0">
     <object model="inventario.usuario" pk="1">
         <field name="last_login" type="DateTimeField">2019-08-27T18:42:02.437050+00:00</KGvOajQ8O+g=</field>
-        <field name="email" type="CharField">jinwolf@sobrevalorado.com</field>
-        <field name="first_name" type="CharField">Moises</field>
-        <field name="last_name" type="CharField">Sanchez</field>
+        <field name="email" type="CharField">nachodark3@gmail.com</field>
+        <field name="first_name" type="CharField">Ignacio</field>
+        <field name="last_name" type="CharField">Aguirre</field>
         <field name="groups" rel="ManyToManyRel" to="auth.group"></field>
         <field name="user_permissions" rel="ManyToManyRel" to="auth.permission"></field>
     </object>

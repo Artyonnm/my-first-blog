@@ -123,5 +123,3 @@ STATIC_URL = '/static/'
 
 
 AUTH_USER_MODEL = 'inventario.Usuario' # modelo de usuario
-
-
