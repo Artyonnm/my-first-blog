@@ -12,7 +12,7 @@
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
                                 <li>
                                     <a href="/inventario/panel">
-                                        <i class="fa fa-home"></i> Inicio </a>
+                                        <i class="fa fa-home"></i> Dashboard</a>
                                 </li>
                                 <!-- Sub-menu de producto -->
                                 <li>
@@ -27,8 +27,7 @@
                                 </li>
                                 <!--Fin de sub-menu de producto -->
 
-
-
+                                {% if user.is_authenticated and user.nivel != 0 %}
                                 <!-- Sub-menu de proveedor -->    
                                 <li>
                                     <a href="">
@@ -41,10 +40,10 @@
                                     </ul>
                                 </li>
                                 <!-- Fin de sub-menu de proveedor -->
-                                                                
+                                {%endif%}                        
 
 
-                                <!-- Sub-menu de pedido -->
+                                <!-- Sub-menu de mercancia salida-->
                                 <li>
                                     <a href="">
                                         <i class="fa fa-gift"></i>Ingreso mercancía
@@ -56,10 +55,10 @@
 
                                     </ul>
                                     </li>
-                                <!-- Fin de sub-menu de pedido -->
+                                <!-- Fin de sub-menu de mercancia salida-->
 
-
-                                <!-- Sub-menu de clientes-->
+                                {% if user.is_authenticated and user.nivel != 0 %}
+                                <!-- Sub-menu de sucursales -->
                                 <li>
                                     <a href="">
                                         <i class="fa fa-handshake-o"></i>Sucursales
@@ -72,23 +71,23 @@
  
                                     </ul>
                                 </li>
-                                <!-- Fin de sub-menu de clientes -->
-
-                                <!-- Sub-menu de factura-->
+                                <!-- Fin de sub-menu de sucursales  -->
+                                {%endif%}
+                                <!-- Sub-menu de mercancia ingreso-->
                                 <li>
                                     <a href="">
                                         <i class="fa fa-ticket"></i>Salida mercancía
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
-            <li><a href="/inventario/listarFacturas"><i class="fa fa-ellipsis-h"></i>Lista de salidas</a></li>
+            <li><a href="/inventario/mercancias"><i class="fa fa-ellipsis-h"></i>Lista de salidas</a></li>
             <li><a href="/inventario/emitirFactura"><i class="fa fa-money"></i>Agregar salida</a></li>
 
                                     </ul>
                                 </li>
-                                <!-- Fin de sub-menu de factura -->
+                                <!-- Fin de sub-menu de mercancia ingreso -->
                                 
-                                
+                                {% if user.is_authenticated and user.nivel != 0 %}
                                 <!-- Sub-menu de usuarios -->
                                 <li>
                                     <a href="">
@@ -100,7 +99,7 @@
             <li><a href="/inventario/listarUsuarios"><i class="fa fa-circle-o"></i>Listar usuarios</a></li>                                 </ul>
                                 </li>
                                 <!--Fin de sub-menu de usuarios -->
-
+                                {%endif%}
                                 <!-- Sub-menu de manual de usuario-->
 
                                 <li>
