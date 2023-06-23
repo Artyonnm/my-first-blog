@@ -710,7 +710,7 @@ class EmitirFactura(LoginRequiredMixin, View):
         if form.is_valid():
             # Procesa y asigna los datos con form.cleaned_data como se requiere
             request.session['form_details'] = form.cleaned_data['productos']
-            request.session['id_client'] = form.cleaned_data['cliente']
+            request.session['id_client'] = form.cleaned_data.get('cliente')
             return HttpResponseRedirect("detallesDeFactura")
         else:
             #De lo contrario lanzara el mismo formulario

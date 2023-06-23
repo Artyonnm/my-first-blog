@@ -5,7 +5,6 @@
                                 
                                 <div class="logo-nuevo">
                         {% load static %} 
-                        <img id="logo-endogeno" src="{% static 'inventario/assets/logo/logo2.png' %}">
                                 </div> Administrador </div>
                         </div>
 
@@ -48,12 +47,12 @@
                                 <!-- Sub-menu de pedido -->
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-gift"></i>Pedido
+                                        <i class="fa fa-gift"></i>Ingreso mercancía
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
-<li><a href="/inventario/listarPedidos"><i class="fa fa-ellipsis-h"></i>Listar pedidos</a></li>
-<li><a href="/inventario/agregarPedido"><i class="fa fa-plus"></i>Añadir pedido</a></li>
+<li><a href="/inventario/listarPedidos"><i class="fa fa-ellipsis-h"></i>Lista de ingreso</a></li>
+<li><a href="/inventario/agregarPedido"><i class="fa fa-plus"></i>Añadir ingreso</a></li>
 
                                     </ul>
                                     </li>
@@ -63,13 +62,13 @@
                                 <!-- Sub-menu de clientes-->
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-handshake-o"></i>Clientes
+                                        <i class="fa fa-handshake-o"></i>Sucursales
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
 
-           <li><a href="/inventario/listarClientes"><i class="fa fa-ellipsis-h"></i>Listar clientes</a></li>                            
-            <li><a href="/inventario/agregarCliente"><i class="fa fa-plus"></i>Agregar cliente</a></li>
+           <li><a href="/inventario/listarClientes"><i class="fa fa-ellipsis-h"></i>Listar sucursales</a></li>                            
+            <li><a href="/inventario/agregarCliente"><i class="fa fa-plus"></i>Agregar sucursal</a></li>
  
                                     </ul>
                                 </li>
@@ -78,12 +77,12 @@
                                 <!-- Sub-menu de factura-->
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-ticket"></i>Factura
+                                        <i class="fa fa-ticket"></i>Salida mercancía
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
-            <li><a href="/inventario/listarFacturas"><i class="fa fa-ellipsis-h"></i>Listar facturas</a></li>
-            <li><a href="/inventario/emitirFactura"><i class="fa fa-money"></i>Emitir factura</a></li>
+            <li><a href="/inventario/listarFacturas"><i class="fa fa-ellipsis-h"></i>Lista de salidas</a></li>
+            <li><a href="/inventario/emitirFactura"><i class="fa fa-money"></i>Agregar salida</a></li>
 
                                     </ul>
                                 </li>

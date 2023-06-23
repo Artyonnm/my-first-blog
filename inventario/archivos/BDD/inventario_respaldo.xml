@@ -51,13 +51,13 @@
     </object>
     <object model="inventario.cliente" pk="1">
         <field name="cedula" type="CharField">2617816489</field>
-        <field name="nombre" type="CharField">Sneiker</field>
-        <field name="apellido" type="CharField">Diaz</field>
-        <field name="direccion" type="CharField">Calle siempre viva xd</field>
-        <field name="nacimiento" type="DateField">5555-05-05</field>
-        <field name="telefono" type="CharField">04243538716</field>
+        <field name="nombre" type="CharField">Ignacio</field>
+        <field name="apellido" type="CharField">Aguirre</field>
+        <field name="direccion" type="CharField">Calle falsa 123</field>
+        <field name="nacimiento" type="DateField">1234-56-78</field>
+        <field name="telefono" type="CharField">+56 9 1234 5678</field>
         <field name="telefono2" type="CharField">88</field>
-        <field name="correo" type="CharField">sneikerjesus1@gmail.com</field>
+        <field name="correo" type="CharField">nachodark3@gmail.com</field>
         <field name="correo2" type="CharField">99</field>
     </object>
     <object model="inventario.factura" pk="5">
@@ -160,13 +160,13 @@
     </object>
     <object model="inventario.proveedor" pk="2">
         <field name="cedula" type="CharField">26178164</field>
-        <field name="nombre" type="CharField">Sneiker Jesus</field>
-        <field name="apellido" type="CharField">Diaz Ramos</field>
-        <field name="direccion" type="CharField">Calle Rivas Numero 29</field>
-        <field name="nacimiento" type="DateField">2016-02-16</field>
-        <field name="telefono" type="CharField">04243538716</field>
+        <field name="nombre" type="CharField">Ignacio</field>
+        <field name="apellido" type="CharField">Aguirre Rios</field>
+        <field name="direccion" type="CharField">Calle falsa 123</field>
+        <field name="nacimiento" type="DateField">1234-56-78</field>
+        <field name="telefono" type="CharField">+56 9 1234 5678</field>
         <field name="telefono2" type="CharField"></field>
-        <field name="correo" type="CharField">sneikerjesus1@gmail.com</field>
+        <field name="correo" type="CharField">nachodark3@gmail.com</field>
         <field name="correo2" type="CharField"></field>
     </object>
     <object model="inventario.proveedor" pk="5">

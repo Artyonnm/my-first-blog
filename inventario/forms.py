@@ -89,7 +89,7 @@ class ExportarClientesFormulario(forms.Form):
 
 
 class ClienteFormulario(forms.ModelForm):
-    tipoC =  [ ('1','V'),('2','E') ]
+    tipoC =  [ ('1','Pyme'),('2','Grande Empresa') ]
 
     telefono2 = forms.CharField(
         required = False,
@@ -110,7 +110,7 @@ class ClienteFormulario(forms.ModelForm):
     tipoCedula = forms.CharField(
         label="Tipo de cedula",
         max_length=2,
-        widget=forms.Select(choices=tipoC,attrs={'placeholder': 'Tipo de cedula',
+        widget=forms.Select(choices=tipoC,attrs={'placeholder': 'Tipo de cliente',
         'id':'tipoCedula','class':'form-control'}
         )
         )
@@ -120,11 +120,11 @@ class ClienteFormulario(forms.ModelForm):
         model = Cliente
         fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2']
         labels = {
-        'cedula': 'Cedula del cliente',
+        'cedula': 'Tipo de cliente',
         'nombre': 'Nombre del cliente',
         'apellido': 'Apellido del cliente',
         'direccion': 'Direccion del cliente',
-        'nacimiento': 'Fecha de nacimiento del cliente',
+        'nacimiento': 'Fecha de ingreso del cliente',
         'telefono': 'Numero telefonico del cliente',
         'correo': 'Correo electronico del cliente',
         'telefono2': 'Segundo numero telefonico',
@@ -151,12 +151,12 @@ class EmitirFacturaFormulario(forms.Form):
        super(EmitirFacturaFormulario, self).__init__(*args, **kwargs)
 
        if(elecciones):
-            self.fields["cliente"] = forms.CharField(label="Cliente a facturar",max_length=50,
+            self.fields["cliente"] = forms.CharField(label="Destino",max_length=50,
             widget=forms.Select(choices=elecciones,
-            attrs={'placeholder': 'La cedula del cliente a facturar',
+            attrs={'placeholder': 'El tipo de cliente a facturar',
             'id':'cliente','class':'form-control'}))
     
-    productos = forms.IntegerField(label="Numero de productos",widget=forms.NumberInput(attrs={'placeholder': 'Numero de productos a facturar',
+    productos = forms.IntegerField(label="Numero de productos",widget=forms.NumberInput(attrs={'placeholder': 'Numero de productos',
         'id':'productos','class':'form-control'}))
 
 class DetallesFacturaFormulario(forms.Form):
@@ -166,7 +166,7 @@ class DetallesFacturaFormulario(forms.Form):
 
     vista_precio = MisPrecios(required=False,queryset=productos,label="Precio del producto",widget=forms.Select(attrs={'placeholder': 'El precio del producto','class':'form-control','disabled':'true'}))
 
-    cantidad = forms.IntegerField(label="Cantidad a facturar",min_value=0,widget=forms.NumberInput(attrs={'placeholder': 'Introduzca la cantidad del producto','class':'form-control','value':'0','onchange':'calculoPrecio(this);calculoDisponible(this)', 'max':'0'}))
+    cantidad = forms.IntegerField(label="Cantidad de salida",min_value=0,widget=forms.NumberInput(attrs={'placeholder': 'Introduzca la cantidad del producto','class':'form-control','value':'0','onchange':'calculoPrecio(this);calculoDisponible(this)', 'max':'0'}))
 
     cantidad_disponibles = forms.IntegerField(required=False,label="Stock disponible",min_value=0,widget=forms.NumberInput(attrs={'placeholder': 'Introduzca la cantidad del producto','class':'form-control','value':'0', 'max':'0', 'disabled':'true'}))
 
@@ -184,7 +184,7 @@ class EmitirPedidoFormulario(forms.Form):
 
        if(elecciones):
             self.fields["proveedor"] = forms.CharField(label="Proveedor",max_length=50,
-            widget=forms.Select(choices=elecciones,attrs={'placeholder': 'La cedula del proveedor que vende el producto',
+            widget=forms.Select(choices=elecciones,attrs={'placeholder': 'El código del proveedor que vende el producto',
             'id':'proveedor','class':'form-control'}))
 
     productos = forms.IntegerField(label="Numero de productos",widget=forms.NumberInput(attrs={'placeholder': 'Numero de productos a comprar',
@@ -209,7 +209,7 @@ class DetallesPedidoFormulario(forms.Form):
 
 
 class ProveedorFormulario(forms.ModelForm):
-    tipoC =  [ ('1','V'),('2','E') ]
+    tipoC =  [ ('1','Bienes'),('2','Servicios') ]
 
     telefono2 = forms.CharField(
         required = False,
@@ -230,7 +230,7 @@ class ProveedorFormulario(forms.ModelForm):
     tipoCedula = forms.CharField(
         label="Tipo de cedula",
         max_length=2,
-        widget=forms.Select(choices=tipoC,attrs={'placeholder': 'Tipo de cedula',
+        widget=forms.Select(choices=tipoC,attrs={'placeholder': 'Tipo de proveedor',
         'id':'tipoCedula','class':'form-control'}
         )
         )
@@ -240,11 +240,11 @@ class ProveedorFormulario(forms.ModelForm):
         model = Cliente
         fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2']
         labels = {
-        'cedula': 'Cedula del proveedor',
-        'nombre': 'Nombre del proveedor',
+        'cedula': 'Código del proveedor',
+        'nombre': 'Función del proveedor',
         'apellido': 'Apellido del proveedor',
         'direccion': 'Direccion del proveedor',
-        'nacimiento': 'Fecha de nacimiento del proveedor',
+        'nacimiento': 'Fecha de ingreso del proveedor',
         'telefono': 'Numero telefonico del proveedor',
         'correo': 'Correo electronico del proveedor',
         'telefono2': 'Segundo numero telefonico',

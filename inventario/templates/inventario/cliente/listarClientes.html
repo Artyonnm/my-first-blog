@@ -10,8 +10,8 @@
 
                 <article class="content responsive-tables-page">
                     <div class="title-block">
-                        <h1 class="title"> Listar clientes </h1>
-                        <p class="title-description"> Verifique los clientes agregados </p>
+                        <h1 class="title"> Listar sucursales </h1>
+                        <p class="title-description"> Verifique las sucursales agregados </p>
                     </div>
                     <section class="section">
                         <div class="row">
@@ -32,7 +32,7 @@
                                 <div class="card">
                                     <div class="card-block">
                                         <div class="card-title-block">
-                                            <h3 class="title">Clientes</h3>
+                                            <h3 class="title">Sucursales</h3>
                                         </div>
                                         <section class="example">
                                             <div class="table-responsive">
@@ -41,7 +41,7 @@
                                                         <tr>
                                                             <th>ID</th>
                                                             <th>Cedula</th>
-                                                            <th>Nombre completo</th>
+                                                            <th>Nombre</th>
                                                             <th>Telefono</th>
                                                             <th>Correo</th>
                                                             <th>Opciones</th>
@@ -62,9 +62,9 @@
                                                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></button>
                                                 
                                                 <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="/inventario/editarCliente/{{ fila.id}}">Editar/Ver cliente</a>
+                                                    <a class="dropdown-item" href="/inventario/editarCliente/{{ fila.id}}">Editar/Ver sucursal</a>
                                                     <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" onclick="eliminarEntrada( {{fila.id}},'cliente' )">Eliminar Cliente</a>
+                                                    <a class="dropdown-item" onclick="eliminarEntrada( {{fila.id}},'cliente' )">Eliminar sucursal</a>
                                                     </div>
                                                      </div>
                                                             </td>
