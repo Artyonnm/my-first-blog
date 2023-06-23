@@ -95,7 +95,7 @@ class ClienteFormulario(forms.ModelForm):
         required = False,
         label = 'Segundo numero telefonico',
         widget = forms.TextInput(
-        attrs={'placeholder': 'Inserte el telefono alternativo del cliente',
+        attrs={'placeholder': 'Inserte el telefono alternativo de la sucursal',
         'id':'telefono2','class':'form-control'}),
         )
 
@@ -103,14 +103,14 @@ class ClienteFormulario(forms.ModelForm):
         required=False,
         label = 'Segundo correo electronico',
         widget = forms.TextInput(
-        attrs={'placeholder': 'Inserte el correo alternativo del cliente',
+        attrs={'placeholder': 'Inserte el correo alternativo de la sucursal',
         'id':'correo2','class':'form-control'}),
         )
 
     tipoCedula = forms.CharField(
         label="Tipo de cedula",
         max_length=2,
-        widget=forms.Select(choices=tipoC,attrs={'placeholder': 'Tipo de cliente',
+        widget=forms.Select(choices=tipoC,attrs={'placeholder': 'Tipo de sucursal',
         'id':'tipoCedula','class':'form-control'}
         )
         )
@@ -120,26 +120,26 @@ class ClienteFormulario(forms.ModelForm):
         model = Cliente
         fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2']
         labels = {
-        'cedula': 'Tipo de cliente',
-        'nombre': 'Nombre del cliente',
-        'apellido': 'Apellido del cliente',
-        'direccion': 'Direccion del cliente',
-        'nacimiento': 'Fecha de ingreso del cliente',
-        'telefono': 'Numero telefonico del cliente',
-        'correo': 'Correo electronico del cliente',
+        'cedula': 'Tipo de sucursal',
+        'nombre': 'Zona de la sucursal',
+        'apellido': 'Nombre de la sucursal',
+        'direccion': 'Direccion del sucursal',
+        'nacimiento': 'Fecha de ingreso del sucursal',
+        'telefono': 'Numero telefonico del sucursal',
+        'correo': 'Correo electronico del sucursal',
         'telefono2': 'Segundo numero telefonico',
         'correo2': 'Segundo correo electronico'
         }
         widgets = {
-        'cedula': forms.TextInput(attrs={'placeholder': 'Inserte la cedula de identidad del cliente',
+        'cedula': forms.TextInput(attrs={'placeholder': 'Inserte la cedula de identidad de la sucursal',
         'id':'cedula','class':'form-control'} ),
-        'nombre': forms.TextInput(attrs={'placeholder': 'Inserte el primer o primeros nombres del cliente',
+        'nombre': forms.TextInput(attrs={'placeholder': 'Inserte el primer o primeros nombres de la sucursal',
         'id':'nombre','class':'form-control'}),
-        'apellido': forms.TextInput(attrs={'class':'form-control','id':'apellido','placeholder':'El apellido del cliente'}),
-        'direccion': forms.TextInput(attrs={'class':'form-control','id':'direccion','placeholder':'Direccion del cliente'}), 
+        'apellido': forms.TextInput(attrs={'class':'form-control','id':'apellido','placeholder':'Ciudad del local'}),
+        'direccion': forms.TextInput(attrs={'class':'form-control','id':'direccion','placeholder':'Direccion de la sucursal'}), 
         'nacimiento':forms.DateInput(format=('%d-%m-%Y'),attrs={'id':'hasta','class':'form-control','type':'date'} ),
         'telefono':forms.TextInput(attrs={'id':'telefono','class':'form-control',
-        'placeholder':'El telefono del cliente'} ),
+        'placeholder':'El telefono de la sucursal'} ),
         'correo':forms.TextInput(attrs={'placeholder': 'Correo del cliente',
         'id':'correo','class':'form-control'} )
         }
@@ -153,7 +153,7 @@ class EmitirFacturaFormulario(forms.Form):
        if(elecciones):
             self.fields["cliente"] = forms.CharField(label="Destino",max_length=50,
             widget=forms.Select(choices=elecciones,
-            attrs={'placeholder': 'El tipo de cliente a facturar',
+            attrs={'placeholder': 'El tipo de sucursal a facturar',
             'id':'cliente','class':'form-control'}))
     
     productos = forms.IntegerField(label="Numero de productos",widget=forms.NumberInput(attrs={'placeholder': 'Numero de productos',
@@ -242,7 +242,7 @@ class ProveedorFormulario(forms.ModelForm):
         labels = {
         'cedula': 'Código del proveedor',
         'nombre': 'Función del proveedor',
-        'apellido': 'Apellido del proveedor',
+        'apellido': 'Nombre del proveedor',
         'direccion': 'Direccion del proveedor',
         'nacimiento': 'Fecha de ingreso del proveedor',
         'telefono': 'Numero telefonico del proveedor',
@@ -255,7 +255,7 @@ class ProveedorFormulario(forms.ModelForm):
         'id':'cedula','class':'form-control'} ),
         'nombre': forms.TextInput(attrs={'placeholder': 'Inserte el primer o primeros nombres del proveedor',
         'id':'nombre','class':'form-control'}),
-        'apellido': forms.TextInput(attrs={'class':'form-control','id':'apellido','placeholder':'El apellido del proveedor'}),
+        'apellido': forms.TextInput(attrs={'class':'form-control','id':'apellido','placeholder':'El nombre del proveedor'}),
         'direccion': forms.TextInput(attrs={'class':'form-control','id':'direccion','placeholder':'Direccion del proveedor'}), 
         'nacimiento':forms.DateInput(format=('%d-%m-%Y'),attrs={'id':'hasta','class':'form-control','type':'date'} ),
         'telefono':forms.TextInput(attrs={'id':'telefono','class':'form-control',
