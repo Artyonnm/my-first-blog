@@ -5,7 +5,7 @@
                                 
                                 <div class="logo-nuevo">
                         {% load static %} 
-                                </div> Administrador </div>
+                                </div>Bienvenido al panel</div>
                         </div>
 
                         <nav class="menu">
@@ -80,7 +80,7 @@
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
-            <li><a href="/inventario/mercancias"><i class="fa fa-ellipsis-h"></i>Lista de salidas</a></li>
+            <li><a href="/inventario/listarFacturas"><i class="fa fa-ellipsis-h"></i>Lista de salidas</a></li>
             <li><a href="/inventario/emitirFactura"><i class="fa fa-money"></i>Agregar salida</a></li>
 
                                     </ul>
@@ -100,7 +100,7 @@
                                 </li>
                                 <!--Fin de sub-menu de usuarios -->
                                 {%endif%}
-                                <!-- Sub-menu de manual de usuario-->
+                                <!-- Sub-menu de Devoluciones-->
 
                                 <li>
                                     <a href="">
@@ -110,21 +110,13 @@
                                     <ul class="sidebar-nav">
                                 
                                     {% load static %}
-                                    <!--
-                                <li>
-                                    <a href="{% static 'inventario/manual.pdf' %}" download>
-                                        <i class="fa fa-download"></i> Descargar manual de usuario (PDF)
-                                        
-                                    </a>
-                                </li>
-                            -->
 
             <li><a href="/inventario/verManualDeUsuario/inicio"><i class="fa fa-eye"></i>Ver manual de usuario</a></li>
 
                                     </ul>
                                 </li>
 
-                                 <!--Fin de sub-menu de manual de usuario -->
+                                 <!--Fin de sub-menu de  Devoluciones-->
 
                                   <!-- -->
                             </ul>
