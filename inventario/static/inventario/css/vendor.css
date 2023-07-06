@@ -1,13 +1,5 @@
 @charset "UTF-8";
 
-/*!
- * animate.css -http://daneden.me/animate
- * Version - 3.6.0
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2018 Daniel Eden
- */
-
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
@@ -6100,11 +6092,6 @@
   100% { transform: rotate(360deg); }
 }
 
-
-/*
- * The MIT License
- * Copyright (c) 2012 Matias Meno <m@tias.me>
- */
 @-webkit-keyframes passing-through {
   0% {
     opacity: 0;
@@ -6490,12 +6477,6 @@
         border-right: 6px solid transparent;
         border-bottom: 6px solid #be2626; }
 
-/*!
- * Quill Editor v1.3.5
- * https://quilljs.com/
- * Copyright (c) 2014, Jason Chen
- * Copyright (c) 2013, salesforce.com
- */
 .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
@@ -6888,12 +6869,7 @@
   right: 15px;
 }
 
-/*!
- * Quill Editor v1.3.5
- * https://quilljs.com/
- * Copyright (c) 2014, Jason Chen
- * Copyright (c) 2013, salesforce.com
- */
+
 .ql-container {
   box-sizing: border-box;
   font-family: Helvetica, Arial, sans-serif;
@@ -7837,12 +7813,7 @@
 .morris-hover{position:absolute;z-index:1000}.morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,0.8);border:solid 2px rgba(230,230,230,0.8);font-family:sans-serif;font-size:12px;text-align:center}.morris-hover.morris-default-style .morris-hover-row-label{font-weight:bold;margin:0.25em 0}
 .morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:0.1em 0}
 
-/*!
- * Bootstrap v4.0.0 (https://getbootstrap.com)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

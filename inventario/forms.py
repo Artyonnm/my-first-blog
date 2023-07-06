@@ -184,7 +184,7 @@ class EmitirPedidoFormulario(forms.Form):
 
        if(elecciones):
             self.fields["proveedor"] = forms.CharField(label="Proveedor",max_length=50,
-            widget=forms.Select(choices=elecciones,attrs={'placeholder': 'El código del proveedor que vende el producto',
+            widget=forms.Select(choices=elecciones,attrs={'placeholder': 'El tipo de proveedor que vende el producto',
             'id':'proveedor','class':'form-control'}))
 
     productos = forms.IntegerField(label="Numero de productos",widget=forms.NumberInput(attrs={'placeholder': 'Numero de productos a comprar',
@@ -240,7 +240,7 @@ class ProveedorFormulario(forms.ModelForm):
         model = Cliente
         fields = ['tipoCedula','cedula','nombre','apellido','direccion','nacimiento','telefono','correo','telefono2','correo2']
         labels = {
-        'cedula': 'Código del proveedor',
+        'cedula': 'Tipo de proveedor',
         'nombre': 'Función del proveedor',
         'apellido': 'Nombre del proveedor',
         'direccion': 'Direccion del proveedor',

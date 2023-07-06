@@ -1,16 +1,3 @@
-/*!
- * jQuery JavaScript Library v3.0.0
- * https://jquery.com/
- *
- * Includes Sizzle.js
- * https://sizzlejs.com/
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license
- * https://jquery.org/license
- *
- * Date: 2016-06-09T18:02Z
- */
 ( function( global, factory ) {
 
 	"use strict";
@@ -539,16 +526,6 @@ function isArrayLike( obj ) {
 		typeof length === "number" && length > 0 && ( length - 1 ) in obj;
 }
 var Sizzle =
-/*!
- * Sizzle CSS Selector Engine v2.3.0
- * https://sizzlejs.com/
- *
- * Copyright jQuery Foundation and other contributors
- * Released under the MIT license
- * http://jquery.org/license
- *
- * Date: 2016-01-04
- */
 (function( window ) {
 
 var i,
@@ -10036,37 +10013,7 @@ if ( !noGlobal ) {
 return jQuery;
 } ) );
 
-/* Javascript plotting library for jQuery, version 0.8.3.
 
-Copyright (c) 2007-2014 IOLA and Ole Laursen.
-Licensed under the MIT license.
-
-*/
-
-// first an inline dependency, jquery.colorhelpers.js, we inline it here
-// for convenience
-
-/* Plugin for jQuery for working with colors.
- *
- * Version 1.1.
- *
- * Inspiration from jQuery color animation plugin by John Resig.
- *
- * Released under the MIT license by Ole Laursen, October 2009.
- *
- * Examples:
- *
- *   $.color.parse("#fff").scale('rgb', 0.25).add('a', -0.5).toString()
- *   var c = $.color.extract($("#mydiv"), 'background-color');
- *   console.log(c.r, c.g, c.b, c.a);
- *   $.color.make(100, 50, 25, 0.4).toString() // returns "rgba(100,50,25,0.4)"
- *
- * Note that .scale() and .add() return the same modified object
- * instead of making a new one.
- *
- * V. 1.1: Fix error handling so e.g. parsing an empty string does
- * produce a color rather than just crashing.
- */
 (function($){$.color={};$.color.make=function(r,g,b,a){var o={};o.r=r||0;o.g=g||0;o.b=b||0;o.a=a!=null?a:1;o.add=function(c,d){for(var i=0;i<c.length;++i)o[c.charAt(i)]+=d;return o.normalize()};o.scale=function(c,f){for(var i=0;i<c.length;++i)o[c.charAt(i)]*=f;return o.normalize()};o.toString=function(){if(o.a>=1){return"rgb("+[o.r,o.g,o.b].join(",")+")"}else{return"rgba("+[o.r,o.g,o.b,o.a].join(",")+")"}};o.normalize=function(){function clamp(min,value,max){return value<min?min:value>max?max:value}o.r=clamp(0,parseInt(o.r),255);o.g=clamp(0,parseInt(o.g),255);o.b=clamp(0,parseInt(o.b),255);o.a=clamp(0,o.a,1);return o};o.clone=function(){return $.color.make(o.r,o.b,o.g,o.a)};return o.normalize()};$.color.extract=function(elem,css){var c;do{c=elem.css(css).toLowerCase();if(c!=""&&c!="transparent")break;elem=elem.parent()}while(elem.length&&!$.nodeName(elem.get(0),"body"));if(c=="rgba(0, 0, 0, 0)")c="transparent";return $.color.parse(c)};$.color.parse=function(str){var res,m=$.color.make;if(res=/rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/.exec(str))return m(parseInt(res[1],10),parseInt(res[2],10),parseInt(res[3],10));if(res=/rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)/.exec(str))return m(parseInt(res[1],10),parseInt(res[2],10),parseInt(res[3],10),parseFloat(res[4]));if(res=/rgb\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*\)/.exec(str))return m(parseFloat(res[1])*2.55,parseFloat(res[2])*2.55,parseFloat(res[3])*2.55);if(res=/rgba\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\s*\)/.exec(str))return m(parseFloat(res[1])*2.55,parseFloat(res[2])*2.55,parseFloat(res[3])*2.55,parseFloat(res[4]));if(res=/#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(str))return m(parseInt(res[1],16),parseInt(res[2],16),parseInt(res[3],16));if(res=/#([a-fA-F0-9])([a-fA-F0-9])([a-fA-F0-9])/.exec(str))return m(parseInt(res[1]+res[1],16),parseInt(res[2]+res[2],16),parseInt(res[3]+res[3],16));var name=$.trim(str).toLowerCase();if(name=="transparent")return m(255,255,255,0);else{res=lookupColors[name]||[0,0,0];return m(res[0],res[1],res[2])}};var lookupColors={aqua:[0,255,255],azure:[240,255,255],beige:[245,245,220],black:[0,0,0],blue:[0,0,255],brown:[165,42,42],cyan:[0,255,255],darkblue:[0,0,139],darkcyan:[0,139,139],darkgrey:[169,169,169],darkgreen:[0,100,0],darkkhaki:[189,183,107],darkmagenta:[139,0,139],darkolivegreen:[85,107,47],darkorange:[255,140,0],darkorchid:[153,50,204],darkred:[139,0,0],darksalmon:[233,150,122],darkviolet:[148,0,211],fuchsia:[255,0,255],gold:[255,215,0],green:[0,128,0],indigo:[75,0,130],khaki:[240,230,140],lightblue:[173,216,230],lightcyan:[224,255,255],lightgreen:[144,238,144],lightgrey:[211,211,211],lightpink:[255,182,193],lightyellow:[255,255,224],lime:[0,255,0],magenta:[255,0,255],maroon:[128,0,0],navy:[0,0,128],olive:[128,128,0],orange:[255,165,0],pink:[255,192,203],purple:[128,0,128],violet:[128,0,128],red:[255,0,0],silver:[192,192,192],white:[255,255,255],yellow:[255,255,0]}})(jQuery);
 
 // the actual Flot code
@@ -13205,27 +13152,7 @@ Licensed under the MIT license.
 
 })(jQuery);
 
-/* Flot plugin for automatically redrawing plots as the placeholder resizes.
 
-Copyright (c) 2007-2014 IOLA and Ole Laursen.
-Licensed under the MIT license.
-
-It works by listening for changes on the placeholder div (through the jQuery
-resize event plugin) - if the size changes, it will redraw the plot.
-
-There are no options. If you need to disable the plugin for some plots, you
-can just fix the size of their placeholders.
-
-*/
-
-/* Inline dependency:
- * jQuery resize event - v1.1 - 3/14/2010
- * http://benalman.com/projects/jquery-resize-plugin/
- *
- * Copyright (c) 2010 "Cowboy" Ben Alman
- * Dual licensed under the MIT and GPL licenses.
- * http://benalman.com/about/license/
- */
 (function($,e,t){"$:nomunge";var i=[],n=$.resize=$.extend($.resize,{}),a,r=false,s="setTimeout",u="resize",m=u+"-special-event",o="pendingDelay",l="activeDelay",f="throttleWindow";n[o]=200;n[l]=20;n[f]=true;$.event.special[u]={setup:function(){if(!n[f]&&this[s]){return false}var e=$(this);i.push(this);e.data(m,{w:e.width(),h:e.height()});if(i.length===1){a=t;h()}},teardown:function(){if(!n[f]&&this[s]){return false}var e=$(this);for(var t=i.length-1;t>=0;t--){if(i[t]==this){i.splice(t,1);break}}e.removeData(m);if(!i.length){if(r){cancelAnimationFrame(a)}else{clearTimeout(a)}a=null}},add:function(e){if(!n[f]&&this[s]){return false}var i;function a(e,n,a){var r=$(this),s=r.data(m)||{};s.w=n!==t?n:r.width();s.h=a!==t?a:r.height();i.apply(this,arguments)}if($.isFunction(e)){i=e;return a}else{i=e.handler;e.handler=a}}};function h(t){if(r===true){r=t||1}for(var s=i.length-1;s>=0;s--){var l=$(i[s]);if(l[0]==e||l.is(":visible")){var f=l.width(),c=l.height(),d=l.data(m);if(d&&(f!==d.w||c!==d.h)){l.trigger(u,[d.w=f,d.h=c]);r=t||true}}else{d=l.data(m);d.w=0;d.h=0}}if(a!==null){if(r&&(t==null||t-r<1e3)){a=e.requestAnimationFrame(h)}else{a=setTimeout(h,n[o]);r=false}}}if(!e.requestAnimationFrame){e.requestAnimationFrame=function(){return e.webkitRequestAnimationFrame||e.mozRequestAnimationFrame||e.oRequestAnimationFrame||e.msRequestAnimationFrame||function(t,i){return e.setTimeout(function(){t((new Date).getTime())},n[l])}}()}if(!e.cancelAnimationFrame){e.cancelAnimationFrame=function(){return e.webkitCancelRequestAnimationFrame||e.mozCancelRequestAnimationFrame||e.oCancelRequestAnimationFrame||e.msCancelRequestAnimationFrame||clearTimeout}()}})(jQuery,this);
 
 (function ($) {
@@ -13265,62 +13192,7 @@ can just fix the size of their placeholders.
     });
 })(jQuery);
 
-/* Flot plugin for rendering pie charts.
 
-Copyright (c) 2007-2014 IOLA and Ole Laursen.
-Licensed under the MIT license.
-
-The plugin assumes that each series has a single data value, and that each
-value is a positive integer or zero.  Negative numbers don't make sense for a
-pie chart, and have unpredictable results.  The values do NOT need to be
-passed in as percentages; the plugin will calculate the total and per-slice
-percentages internally.
-
-* Created by Brian Medendorp
-
-* Updated with contributions from btburnett3, Anthony Aragues and Xavi Ivars
-
-The plugin supports these options:
-
-	series: {
-		pie: {
-			show: true/false
-			radius: 0-1 for percentage of fullsize, or a specified pixel length, or 'auto'
-			innerRadius: 0-1 for percentage of fullsize or a specified pixel length, for creating a donut effect
-			startAngle: 0-2 factor of PI used for starting angle (in radians) i.e 3/2 starts at the top, 0 and 2 have the same result
-			tilt: 0-1 for percentage to tilt the pie, where 1 is no tilt, and 0 is completely flat (nothing will show)
-			offset: {
-				top: integer value to move the pie up or down
-				left: integer value to move the pie left or right, or 'auto'
-			},
-			stroke: {
-				color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#FFF')
-				width: integer pixel width of the stroke
-			},
-			label: {
-				show: true/false, or 'auto'
-				formatter:  a user-defined function that modifies the text/style of the label text
-				radius: 0-1 for percentage of fullsize, or a specified pixel length
-				background: {
-					color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#000')
-					opacity: 0-1
-				},
-				threshold: 0-1 for the percentage value at which to hide labels (if they're too small)
-			},
-			combine: {
-				threshold: 0-1 for the percentage value at which to combine slices (if they're too small)
-				color: any hexidecimal color value (other formats may or may not work, so best to stick with something like '#CCC'), if null, the plugin will automatically use the color of the first slice to be combined
-				label: any text value of what the combined slice should be labeled
-			}
-			highlight: {
-				opacity: 0-1
-			}
-		}
-	}
-
-More detail and specific examples can be found in the included HTML file.
-
-*/
 
 (function($) {
 
@@ -14086,15 +13958,6 @@ More detail and specific examples can be found in the included HTML file.
 
 })(jQuery);
 
-/* Pretty handling of time axes.
-
-Copyright (c) 2007-2014 IOLA and Ole Laursen.
-Licensed under the MIT license.
-
-Set axis.mode to "time" to enable. See the section "Time series data" in
-API.txt for details.
-
-*/
 
 (function($) {
 
@@ -15126,14 +14989,7 @@ API.txt for details.
 
 })(jQuery);
 
-/*!
- * jQuery Validation Plugin v1.17.0
- *
- * https://jqueryvalidation.org/
- *
- * Copyright (c) 2017 Jörn Zaefferer
- * Released under the MIT license
- */
+
 (function( factory ) {
 	if ( typeof define === "function" && define.amd ) {
 		define( ["jquery"], factory );
@@ -16505,20 +16361,12 @@ $.extend( $.validator, {
 		// https://jqueryvalidation.org/email-method/
 		email: function( value, element ) {
 
-			// From https://html.spec.whatwg.org/multipage/forms.html#valid-e-mail-address
-			// Retrieved 2014-01-14
-			// If you have a problem with this implementation, report a bug against the above spec
-			// Or use custom methods to implement your own email validation
 			return this.optional( element ) || /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test( value );
 		},
 
 		// https://jqueryvalidation.org/url-method/
 		url: function( value, element ) {
 
-			// Copyright (c) 2010-2013 Diego Perini, MIT licensed
-			// https://gist.github.com/dperini/729294
-			// see also https://mathiasbynens.be/demo/url-regex
-			// modified to allow protocol-relative URLs
 			return this.optional( element ) || /^(?:(?:(?:https?|ftp):)?\/\/)(?:\S+(?::\S*)?@)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})).?)(?::\d{2,5})?(?:[/?#]\S*)?$/i.test( value );
 		},
 
@@ -16727,209 +16575,6 @@ if ( $.ajaxPrefilter ) {
 }
 return $;
 }));
-/**
-*
-* jquery.sparkline.js
-*
-* v2.4.1
-* (c) Splunk, Inc
-* Contact: Gareth Watts (gareth@splunk.com)
-* http://omnipotent.net/jquery.sparkline/
-*
-* Generates inline sparkline charts from data supplied either to the method
-* or inline in HTML
-*
-* Compatible with Internet Explorer 6.0+ and modern browsers equipped with the canvas tag
-* (Firefox 2.0+, Safari, Opera, etc)
-*
-* License: New BSD License
-*
-* Copyright (c) 2012, Splunk Inc.
-* All rights reserved.
-*
-* Redistribution and use in source and binary forms, with or without modification,
-* are permitted provided that the following conditions are met:
-*
-*     * Redistributions of source code must retain the above copyright notice,
-*       this list of conditions and the following disclaimer.
-*     * Redistributions in binary form must reproduce the above copyright notice,
-*       this list of conditions and the following disclaimer in the documentation
-*       and/or other materials provided with the distribution.
-*     * Neither the name of Splunk Inc nor the names of its contributors may
-*       be used to endorse or promote products derived from this software without
-*       specific prior written permission.
-*
-* THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
-* EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
-* OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
-* SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-* SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
-* OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-* HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
-* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-* SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-*
-*
-* Usage:
-*  $(selector).sparkline(values, options)
-*
-* If values is undefined or set to 'html' then the data values are read from the specified tag:
-*   <p>Sparkline: <span class="sparkline">1,4,6,6,8,5,3,5</span></p>
-*   $('.sparkline').sparkline();
-* There must be no spaces in the enclosed data set
-*
-* Otherwise values must be an array of numbers or null values
-*    <p>Sparkline: <span id="sparkline1">This text replaced if the browser is compatible</span></p>
-*    $('#sparkline1').sparkline([1,4,6,6,8,5,3,5])
-*    $('#sparkline2').sparkline([1,4,6,null,null,5,3,5])
-*
-* Values can also be specified in an HTML comment, or as a values attribute:
-*    <p>Sparkline: <span class="sparkline"><!--1,4,6,6,8,5,3,5 --></span></p>
-*    <p>Sparkline: <span class="sparkline" values="1,4,6,6,8,5,3,5"></span></p>
-*    $('.sparkline').sparkline();
-*
-* For line charts, x values can also be specified:
-*   <p>Sparkline: <span class="sparkline">1:1,2.7:4,3.4:6,5:6,6:8,8.7:5,9:3,10:5</span></p>
-*    $('#sparkline1').sparkline([ [1,1], [2.7,4], [3.4,6], [5,6], [6,8], [8.7,5], [9,3], [10,5] ])
-*
-* By default, options should be passed in as the second argument to the sparkline function:
-*   $('.sparkline').sparkline([1,2,3,4], {type: 'bar'})
-*
-* Options can also be set by passing them on the tag itself.  This feature is disabled by default though
-* as there's a slight performance overhead:
-*   $('.sparkline').sparkline([1,2,3,4], {enableTagOptions: true})
-*   <p>Sparkline: <span class="sparkline" sparkType="bar" sparkBarColor="red">loading</span></p>
-* Prefix all options supplied as tag attribute with "spark" (configurable by setting tagOptionsPrefix)
-*
-* Supported options:
-*   lineColor - Color of the line used for the chart
-*   fillColor - Color used to fill in the chart - Set to '' or false for a transparent chart
-*   width - Width of the chart - Defaults to 3 times the number of values in pixels
-*   height - Height of the chart - Defaults to the height of the containing element
-*   chartRangeMin - Specify the minimum value to use for the Y range of the chart - Defaults to the minimum value supplied
-*   chartRangeMax - Specify the maximum value to use for the Y range of the chart - Defaults to the maximum value supplied
-*   chartRangeClip - Clip out of range values to the max/min specified by chartRangeMin and chartRangeMax
-*   chartRangeMinX - Specify the minimum value to use for the X range of the chart - Defaults to the minimum value supplied
-*   chartRangeMaxX - Specify the maximum value to use for the X range of the chart - Defaults to the maximum value supplied
-*   composite - If true then don't erase any existing chart attached to the tag, but draw
-*           another chart over the top - Note that width and height are ignored if an
-*           existing chart is detected.
-*   tagValuesAttribute - Name of tag attribute to check for data values - Defaults to 'values'
-*   enableTagOptions - Whether to check tags for sparkline options
-*   tagOptionsPrefix - Prefix used for options supplied as tag attributes - Defaults to 'spark'
-*   disableHiddenCheck - If set to true, then the plugin will assume that charts will never be drawn into a
-*           hidden dom element, avoding a browser reflow
-*   disableInteraction - If set to true then all mouseover/click interaction behaviour will be disabled,
-*       making the plugin perform much like it did in 1.x
-*   disableTooltips - If set to true then tooltips will be disabled - Defaults to false (tooltips enabled)
-*   disableHighlight - If set to true then highlighting of selected chart elements on mouseover will be disabled
-*       defaults to false (highlights enabled)
-*   highlightLighten - Factor to lighten/darken highlighted chart values by - Defaults to 1.4 for a 40% increase
-*   tooltipContainer - Specify which DOM element the tooltip should be rendered into - defaults to document.body
-*   tooltipClassname - Optional CSS classname to apply to tooltips - If not specified then a default style will be applied
-*   tooltipOffsetX - How many pixels away from the mouse pointer to render the tooltip on the X axis
-*   tooltipOffsetY - How many pixels away from the mouse pointer to render the tooltip on the r axis
-*   tooltipFormatter  - Optional callback that allows you to override the HTML displayed in the tooltip
-*       callback is given arguments of (sparkline, options, fields)
-*   tooltipChartTitle - If specified then the tooltip uses the string specified by this setting as a title
-*   tooltipFormat - A format string or SPFormat object  (or an array thereof for multiple entries)
-*       to control the format of the tooltip
-*   tooltipPrefix - A string to prepend to each field displayed in a tooltip
-*   tooltipSuffix - A string to append to each field displayed in a tooltip
-*   tooltipSkipNull - If true then null values will not have a tooltip displayed (defaults to true)
-*   tooltipValueLookups - An object or range map to map field values to tooltip strings
-*       (eg. to map -1 to "Lost", 0 to "Draw", and 1 to "Win")
-*   numberFormatter - Optional callback for formatting numbers in tooltips
-*   numberDigitGroupSep - Character to use for group separator in numbers "1,234" - Defaults to ","
-*   numberDecimalMark - Character to use for the decimal point when formatting numbers - Defaults to "."
-*   numberDigitGroupCount - Number of digits between group separator - Defaults to 3
-*
-* There are 7 types of sparkline, selected by supplying a "type" option of 'line' (default),
-* 'bar', 'tristate', 'bullet', 'discrete', 'pie' or 'box'
-*    line - Line chart.  Options:
-*       spotColor - Set to '' to not end each line in a circular spot
-*       minSpotColor - If set, color of spot at minimum value
-*       maxSpotColor - If set, color of spot at maximum value
-*       spotRadius - Radius in pixels
-*       lineWidth - Width of line in pixels
-*       normalRangeMin
-*       normalRangeMax - If set draws a filled horizontal bar between these two values marking the "normal"
-*                      or expected range of values
-*       normalRangeColor - Color to use for the above bar
-*       drawNormalOnTop - Draw the normal range above the chart fill color if true
-*       defaultPixelsPerValue - Defaults to 3 pixels of width for each value in the chart
-*       highlightSpotColor - The color to use for drawing a highlight spot on mouseover - Set to null to disable
-*       highlightLineColor - The color to use for drawing a highlight line on mouseover - Set to null to disable
-*       valueSpots - Specify which points to draw spots on, and in which color.  Accepts a range map
-*
-*   bar - Bar chart.  Options:
-*       barColor - Color of bars for postive values
-*       negBarColor - Color of bars for negative values
-*       zeroColor - Color of bars with zero values
-*       nullColor - Color of bars with null values - Defaults to omitting the bar entirely
-*       barWidth - Width of bars in pixels
-*       colorMap - Optional mappnig of values to colors to override the *BarColor values above
-*                  can be an Array of values to control the color of individual bars or a range map
-*                  to specify colors for individual ranges of values
-*       barSpacing - Gap between bars in pixels
-*       zeroAxis - Centers the y-axis around zero if true
-*
-*   tristate - Charts values of win (>0), lose (<0) or draw (=0)
-*       posBarColor - Color of win values
-*       negBarColor - Color of lose values
-*       zeroBarColor - Color of draw values
-*       barWidth - Width of bars in pixels
-*       barSpacing - Gap between bars in pixels
-*       colorMap - Optional mappnig of values to colors to override the *BarColor values above
-*                  can be an Array of values to control the color of individual bars or a range map
-*                  to specify colors for individual ranges of values
-*
-*   discrete - Options:
-*       lineHeight - Height of each line in pixels - Defaults to 30% of the graph height
-*       thesholdValue - Values less than this value will be drawn using thresholdColor instead of lineColor
-*       thresholdColor
-*
-*   bullet - Values for bullet graphs msut be in the order: target, performance, range1, range2, range3, ...
-*       options:
-*       targetColor - The color of the vertical target marker
-*       targetWidth - The width of the target marker in pixels
-*       performanceColor - The color of the performance measure horizontal bar
-*       rangeColors - Colors to use for each qualitative range background color
-*
-*   pie - Pie chart. Options:
-*       sliceColors - An array of colors to use for pie slices
-*       offset - Angle in degrees to offset the first slice - Try -90 or +90
-*       borderWidth - Width of border to draw around the pie chart, in pixels - Defaults to 0 (no border)
-*       borderColor - Color to use for the pie chart border - Defaults to #000
-*
-*   box - Box plot. Options:
-*       raw - Set to true to supply pre-computed plot points as values
-*             values should be: low_outlier, low_whisker, q1, median, q3, high_whisker, high_outlier
-*             When set to false you can supply any number of values and the box plot will
-*             be computed for you.  Default is false.
-*       showOutliers - Set to true (default) to display outliers as circles
-*       outlierIQR - Interquartile range used to determine outliers.  Default 1.5
-*       boxLineColor - Outline color of the box
-*       boxFillColor - Fill color for the box
-*       whiskerColor - Line color used for whiskers
-*       outlierLineColor - Outline color of outlier circles
-*       outlierFillColor - Fill color of the outlier circles
-*       spotRadius - Radius of outlier circles
-*       medianColor - Line color of the median line
-*       target - Draw a target cross hair at the supplied value (default undefined)
-*
-*
-*
-*   Examples:
-*   $('#sparkline1').sparkline(myvalues, { lineColor: '#f00', fillColor: false });
-*   $('.barsparks').sparkline('html', { type:'bar', height:'40px', barWidth:5 });
-*   $('#tristate').sparkline([1,1,-1,1,0,0,-1], { type:'tristate' }):
-*   $('#discrete').sparkline([1,3,4,5,5,3,4,5], { type:'discrete' });
-*   $('#bullet').sparkline([10,12,12,9,7], { type:'bullet' });
-*   $('#pie').sparkline([1,1,2], { type:'pie' });
-*/
-
-/*jslint regexp: true, browser: true, jquery: true, white: true, nomen: false, plusplus: false, maxerr: 500, indent: 4 */
 
 (function(document, Math, undefined) { // performance/minified-size optimization
 (function(factory) {
@@ -21896,12 +21541,6 @@ jQuery.fn.vectorMap('addMap', 'world_en', {"width":950,"height":550,"paths":{"id
 });
 
 
-/*!
- * Quill Editor v1.3.5
- * https://quilljs.com/
- * Copyright (c) 2014, Jason Chen
- * Copyright (c) 2013, salesforce.com
- */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -29464,37 +29103,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* 51 */
 /***/ (function(module, exports) {
 
-/**
- * This library modifies the diff-patch-match library by Neil Fraser
- * by removing the patch and match functionality and certain advanced
- * options in the diff function. The original license is as follows:
- *
- * ===
- *
- * Diff Match and Patch
- *
- * Copyright 2006 Google Inc.
- * http://code.google.com/p/google-diff-match-patch/
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-
-/**
- * The data structure representing a diff is an array of tuples:
- * [[DIFF_DELETE, 'Hello'], [DIFF_INSERT, 'Goodbye'], [DIFF_EQUAL, ' world.']]
- * which means: delete 'Hello', add 'Goodbye' and keep ' world.'
- */
 var DIFF_DELETE = -1;
 var DIFF_INSERT = 1;
 var DIFF_EQUAL = 0;
@@ -38098,36 +37707,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-/*
- *
- * More info at [www.dropzonejs.com](http://www.dropzonejs.com)
- *
- * Copyright (c) 2012, Matias Meno
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- */
 
-// The Emitter class provides the ability to call `.on()` on Dropzone to listen
-// to events.
-// It is strongly based on component's emitter class, and I removed the
-// functionality because of the dependency hell with different frameworks.
 var Emitter = function () {
   function Emitter() {
     _classCallCheck(this, Emitter);
@@ -41593,138 +41173,6 @@ function __guardMethod__(obj, methodName, transform) {
   }
 }
 
-/*!
- * @fileOverview TouchSwipe - jQuery Plugin
- * @version 1.6.18
- *
- * @author Matt Bryson http://www.github.com/mattbryson
- * @see https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
- * @see http://labs.rampinteractive.co.uk/touchSwipe/
- * @see http://plugins.jquery.com/project/touchSwipe
- * @license
- * Copyright (c) 2010-2015 Matt Bryson
- * Dual licensed under the MIT or GPL Version 2 licenses.
- *
- */
-
-/*
- *
- * Changelog
- * $Date: 2010-12-12 (Wed, 12 Dec 2010) $
- * $version: 1.0.0
- * $version: 1.0.1 - removed multibyte comments
- *
- * $Date: 2011-21-02 (Mon, 21 Feb 2011) $
- * $version: 1.1.0 	- added allowPageScroll property to allow swiping and scrolling of page
- *					- changed handler signatures so one handler can be used for multiple events
- * $Date: 2011-23-02 (Wed, 23 Feb 2011) $
- * $version: 1.2.0 	- added click handler. This is fired if the user simply clicks and does not swipe. The event object and click target are passed to handler.
- *					- If you use the http://code.google.com/p/jquery-ui-for-ipad-and-iphone/ plugin, you can also assign jQuery mouse events to children of a touchSwipe object.
- * $version: 1.2.1 	- removed console log!
- *
- * $version: 1.2.2 	- Fixed bug where scope was not preserved in callback methods.
- *
- * $Date: 2011-28-04 (Thurs, 28 April 2011) $
- * $version: 1.2.4 	- Changed licence terms to be MIT or GPL inline with jQuery. Added check for support of touch events to stop non compatible browsers erroring.
- *
- * $Date: 2011-27-09 (Tues, 27 September 2011) $
- * $version: 1.2.5 	- Added support for testing swipes with mouse on desktop browser (thanks to https://github.com/joelhy)
- *
- * $Date: 2012-14-05 (Mon, 14 May 2012) $
- * $version: 1.2.6 	- Added timeThreshold between start and end touch, so user can ignore slow swipes (thanks to Mark Chase). Default is null, all swipes are detected
- *
- * $Date: 2012-05-06 (Tues, 05 June 2012) $
- * $version: 1.2.7 	- Changed time threshold to have null default for backwards compatibility. Added duration param passed back in events, and refactored how time is handled.
- *
- * $Date: 2012-05-06 (Tues, 05 June 2012) $
- * $version: 1.2.8 	- Added the possibility to return a value like null or false in the trigger callback. In that way we can control when the touch start/move should take effect or not (simply by returning in some cases return null; or return false;) This effects the ontouchstart/ontouchmove event.
- *
- * $Date: 2012-06-06 (Wed, 06 June 2012) $
- * $version: 1.3.0 	- Refactored whole plugin to allow for methods to be executed, as well as exposed defaults for user override. Added 'enable', 'disable', and 'destroy' methods
- *
- * $Date: 2012-05-06 (Fri, 05 June 2012) $
- * $version: 1.3.1 	- Bug fixes  - bind() with false as last argument is no longer supported in jQuery 1.6, also, if you just click, the duration is now returned correctly.
- *
- * $Date: 2012-29-07 (Sun, 29 July 2012) $
- * $version: 1.3.2	- Added fallbackToMouseEvents option to NOT capture mouse events on non touch devices.
- * 			- Added "all" fingers value to the fingers property, so any combination of fingers triggers the swipe, allowing event handlers to check the finger count
- *
- * $Date: 2012-09-08 (Thurs, 9 Aug 2012) $
- * $version: 1.3.3	- Code tidy prep for minefied version
- *
- * $Date: 2012-04-10 (wed, 4 Oct 2012) $
- * $version: 1.4.0	- Added pinch support, pinchIn and pinchOut
- *
- * $Date: 2012-11-10 (Thurs, 11 Oct 2012) $
- * $version: 1.5.0	- Added excludedElements, a jquery selector that specifies child elements that do NOT trigger swipes. By default, this is .noSwipe
- *
- * $Date: 2012-22-10 (Mon, 22 Oct 2012) $
- * $version: 1.5.1	- Fixed bug with jQuery 1.8 and trailing comma in excludedElements
- *					- Fixed bug with IE and eventPreventDefault()
- * $Date: 2013-01-12 (Fri, 12 Jan 2013) $
- * $version: 1.6.0	- Fixed bugs with pinching, mainly when both pinch and swipe enabled, as well as adding time threshold for multifinger gestures, so releasing one finger beofre the other doesnt trigger as single finger gesture.
- *					- made the demo site all static local HTML pages so they can be run locally by a developer
- *					- added jsDoc comments and added documentation for the plugin
- *					- code tidy
- *					- added triggerOnTouchLeave property that will end the event when the user swipes off the element.
- * $Date: 2013-03-23 (Sat, 23 Mar 2013) $
- * $version: 1.6.1	- Added support for ie8 touch events
- * $version: 1.6.2	- Added support for events binding with on / off / bind in jQ for all callback names.
- *                   - Deprecated the 'click' handler in favour of tap.
- *                   - added cancelThreshold property
- *                   - added option method to update init options at runtime
- * $version 1.6.3    - added doubletap, longtap events and longTapThreshold, doubleTapThreshold property
- *
- * $Date: 2013-04-04 (Thurs, 04 April 2013) $
- * $version 1.6.4    - Fixed bug with cancelThreshold introduced in 1.6.3, where swipe status no longer fired start event, and stopped once swiping back.
- *
- * $Date: 2013-08-24 (Sat, 24 Aug 2013) $
- * $version 1.6.5    - Merged a few pull requests fixing various bugs, added AMD support.
- *
- * $Date: 2014-06-04 (Wed, 04 June 2014) $
- * $version 1.6.6 	- Merge of pull requests.
- *    				- IE10 touch support
- *    				- Only prevent default event handling on valid swipe
- *    				- Separate license/changelog comment
- *    				- Detect if the swipe is valid at the end of the touch event.
- *    				- Pass fingerdata to event handlers.
- *    				- Add 'hold' gesture
- *    				- Be more tolerant about the tap distance
- *    				- Typos and minor fixes
- *
- * $Date: 2015-22-01 (Thurs, 22 Jan 2015) $
- * $version 1.6.7    - Added patch from https://github.com/mattbryson/TouchSwipe-Jquery-Plugin/issues/206 to fix memory leak
- *
- * $Date: 2015-2-2 (Mon, 2 Feb 2015) $
- * $version 1.6.8    - Added preventDefaultEvents option to proxy events regardless.
- *					- Fixed issue with swipe and pinch not triggering at the same time
- *
- * $Date: 2015-9-6 (Tues, 9 June 2015) $
- * $version 1.6.9    - Added PR from jdalton/hybrid to fix pointer events
- *					- Added scrolling demo
- *					- Added version property to plugin
- *
- * $Date: 2015-1-10 (Wed, 1 October 2015) $
- * $version 1.6.10    - Added PR from beatspace to fix tap events
- * $version 1.6.11    - Added PRs from indri-indri ( Doc tidyup), kkirsche ( Bower tidy up ), UziTech (preventDefaultEvents fixes )
- *					 - Allowed setting multiple options via .swipe("options", options_hash) and more simply .swipe(options_hash) or exisitng instances
- * $version 1.6.12    - Fixed bug with multi finger releases above 2 not triggering events
- *
- * $Date: 2015-12-18 (Fri, 18 December 2015) $
- * $version 1.6.13    - Added PRs
- *                    - Fixed #267 allowPageScroll not working correctly
- * $version 1.6.14    - Fixed #220 / #248 doubletap not firing with swipes, #223 commonJS compatible
- * $version 1.6.15    - More bug fixes
- *
- * $Date: 2016-04-29 (Fri, 29 April 2016) $
- * $version 1.6.16    - Swipes with 0 distance now allow default events to trigger.  So tapping any form elements or A tags will allow default interaction, but swiping will trigger a swipe.
-                        Removed the a, input, select etc from the excluded Children list as the 0 distance tap solves that issue.
-* $Date: 2016-05-19  (Fri, 29 April 2016) $
-* $version 1.6.17     - Fixed context issue when calling instance methods via $("selector").swipe("method");
-* $version 1.6.18     - now honors fallbackToMouseEvents=false for MS Pointer events when a Mouse is used.
-
- */
-
 /**
  * See (http://jquery.com/).
  * @name $
@@ -43703,21 +43151,6 @@ function __guardMethod__(obj, methodName, transform) {
 
 }));
 
-/*!
- * jQuery Browser Plugin 0.1.0
- * https://github.com/gabceb/jquery-browser-plugin
- *
- * Original jquery-browser code Copyright 2005, 2015 jQuery Foundation, Inc. and other contributors
- * http://jquery.org/license
- *
- * Modifications Copyright 2015 Gabriel Cebrian
- * https://github.com/gabceb
- *
- * Released under the MIT license
- *
- * Date: 05-07-2015
- */
-/*global window: false */
 
 (function (factory) {
   if (typeof define === 'function' && define.amd) {
@@ -43901,25 +43334,7 @@ function __guardMethod__(obj, methodName, transform) {
  * @fileOverview Kickass library to create and place poppers near their reference elements.
  * @version 1.12.9
  * @license
- * Copyright (c) 2016 Federico Zivolo and contributors
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
+
  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -46341,13 +45756,7 @@ Popper.Defaults = Defaults;
 return Popper;
 
 })));
-//# sourceMappingURL=popper.js.map
 
-/*!
-  * Bootstrap v4.0.0 (https://getbootstrap.com)
-  * Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('jquery'), require('popper.js')) :
 	typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
@@ -50236,16 +49645,6 @@ exports.Tooltip = Tooltip;
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=bootstrap.js.map
-
-// ┌───────────────────────────────────────────────────────────────────────────────────────────────────────┐ \\
-// │ Raphaël 2.2.0 - JavaScript Vector Library                                                             │ \\
-// ├───────────────────────────────────────────────────────────────────────────────────────────────────────┤ \\
-// │ Copyright © 2008-2016 Dmitry Baranovskiy (http://raphaeljs.com)                                       │ \\
-// │ Copyright © 2008-2016 Sencha Labs (http://sencha.com)                                                 │ \\
-// ├───────────────────────────────────────────────────────────────────────────────────────────────────────┤ \\
-// │ Licensed under the MIT (https://github.com/DmitryBaranovskiy/raphael/blob/master/license.txt) license.│ \\
-// └───────────────────────────────────────────────────────────────────────────────────────────────────────┘ \\
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -55724,24 +55123,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;// Copyright (c) 2013 Adobe Systems Incorporated. All rights reserved.
-	// 
-	// Licensed under the Apache License, Version 2.0 (the "License");
-	// you may not use this file except in compliance with the License.
-	// You may obtain a copy of the License at
-	// 
-	// http://www.apache.org/licenses/LICENSE-2.0
-	// 
-	// Unless required by applicable law or agreed to in writing, software
-	// distributed under the License is distributed on an "AS IS" BASIS,
-	// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	// See the License for the specific language governing permissions and
-	// limitations under the License.
-	// ┌────────────────────────────────────────────────────────────┐ \\
-	// │ Eve 0.5.0 - JavaScript Events Library                      │ \\
-	// ├────────────────────────────────────────────────────────────┤ \\
-	// │ Author Dmitry Baranovskiy (http://dmitry.baranovskiy.com/) │ \\
-	// └────────────────────────────────────────────────────────────┘ \\
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;
 
 	(function (glob) {
 	    var version = "0.5.0",
@@ -58591,11 +57973,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-/* @license
-morris.js v0.5.0
-Copyright 2014 Olly Smith All rights reserved.
-Licensed under the BSD-2-Clause License.
-*/
 
 
 (function() {
